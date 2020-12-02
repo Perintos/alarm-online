@@ -1,14 +1,24 @@
 import React from 'react';
-
+import YouTube from 'react-youtube';
 
 const DisplayVideo = (props) => {
+    const opts = {
+        height: '390',
+        width: '640',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: props.play,
+        },
+    };
+
 
     return(
-        <div>
-            <iframe width="560" height="315" src={props.url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div>  
+            <YouTube 
+                videoId={props.url}
+                opts={opts} 
+                />
         </div>
-
-
     )
 }
 
