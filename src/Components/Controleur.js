@@ -1,10 +1,14 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 
 const Controleur = (props) => {
+
     return(
-        <div>
-            <input type="submit" value={props.isRunning ? "Désactiver l'alarme" : "Régler l'alarme"} onClick={props.onClick}/>
+        <div class="margin-x-small">            
+            <Button type="submit" onClick={props.onClick} variant="contained" color={props.isRunning ? "secondary" : "primary"}>
+                {props.isRunning ? "Désactiver l'alarme" : "Régler l'alarme"}
+            </Button>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 const Clock = (props) => {
     return(
-        <div>
+        <div class="horloge">
             {props.date.toLocaleTimeString()}
         </div>
     )

@@ -4,7 +4,7 @@ import {afficherJourEnLettre, afficherMoisEnLettre} from "../Utils/Date"
 
 const DateToday = (props) => {
     return(
-        <div>
+        <div class="date">
             {afficherJourEnLettre(props.date)} {props.date.getDate()} {afficherMoisEnLettre(props.date)} {props.date.getFullYear()}
         </div>
     )

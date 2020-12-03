@@ -13,7 +13,7 @@ const DisplayVideo = (props) => {
 
 
     return(
-        <div>  
+        <div class="margin-x-small">  
             <YouTube 
                 videoId={props.url}
                 opts={opts} 

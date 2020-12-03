@@ -36,8 +36,8 @@ const Timer = (props) => {
     }
 
     return(
-        <div>
-            <p>{calculerTempsRestant(props.heure, props.minute)}</p>
+        <div class=".margin-x-small">
+            <p class="timer">{calculerTempsRestant(props.heure, props.minute)}</p>
         </div>
     )
 }

@@ -1,11 +1,12 @@
 import React from 'react';
+import Select from "@material-ui/core/Select";
+
 import {createArrayUnsignedInt} from "../Utils/Utils"
-
-
-
-
+import { withTheme } from '@material-ui/core';
 
 const SelectHeure = (props) => {
+
+ 
 
     const handleChangeHeure = (event) => {
         console.log("handleChangeHeure : " + event.target.value);
@@ -27,15 +28,33 @@ const SelectHeure = (props) => {
     );
 
     return(
-        <div>
-            <p>Heure de l'alarme?</p>
-            <select name="heure" id="heure-select" onChange={handleChangeHeure}>
-                {listOptionsHour}
-            </select>
-            <span> : </span>
-            <select name="minute" id="minute-select" onChange={handleChangeMinute}>
-                {listOptionsMinutes}
-            </select>
+        <div class="margin-x-small">
+            <div>
+                <p>Heure de l'alarme?</p>
+            </div>
+            <div>
+                <Select  
+                    native
+                    onChange={handleChangeHeure}
+                    inputProps={{
+                        name: "heure",
+                        id: "heure-native-simple"
+                    }}
+                >
+                    {listOptionsHour}
+                </Select>
+                <span> : </span>
+                <Select
+                    native
+                    onChange={handleChangeMinute}
+                    inputProps={{
+                        name: "minute",
+                        id: "minute-native-simple"
+                    }}
+                >
+                    {listOptionsMinutes}
+                </Select>
+            </div>
         </div>
     )
 }

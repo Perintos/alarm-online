@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react';
 
-import YouTube from 'react-youtube';
+import Grid from '@material-ui/core/Grid';
 
 import Clock from '../Components/Clock'
 import SelectHeure from '../Components/SelectHeure'
 import DateToday from '../Components/DateToday'
 import UrlVideo from '../Components/UrlVideo';
 import DisplayVideo from '../Components/DisplayVideo';
-import DisplayVideo2 from '../Components/DisplayVideo2';
 import Controleur from '../Components/Controleur';
 import Timer from '../Components/Timer';
+
+
 
 const Home = () => {
 
@@ -44,18 +45,18 @@ const Home = () => {
             setIsRunning(true);
     }
 
-
-
     return(
         <div>
-            <h1>Réveil en ligne</h1>
-            <Clock date={date} />
-            <DateToday date={date}/>
-            <SelectHeure setHeure={setHeure} setMinute={setMinute}/>
-            <UrlVideo handleChange={handleChange}/>
-            <DisplayVideo play={play} url={url} />
-            {isRunning ? <Timer heure={heure} minute={minute}/> : null}
-            <Controleur isRunning={isRunning} onClick={fnStartAlamr} />
+            <Grid container direction="column" justify="center" alignItems="center" >
+                <h1 class="titre">Réveil en ligne</h1>
+                <Clock date={date} />
+                <DateToday date={date}/>
+                <SelectHeure setHeure={setHeure} setMinute={setMinute}/>
+                <UrlVideo handleChange={handleChange}/>
+                <DisplayVideo play={play} url={url} />
+                {isRunning ? <Timer heure={heure} minute={minute}/> : null}
+                <Controleur isRunning={isRunning} onClick={fnStartAlamr} />
+            </Grid>
         </div>
     )
 }
