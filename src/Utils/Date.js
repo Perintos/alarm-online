@@ -1,4 +1,4 @@
-export const  afficherJourEnLettre = (date) => {
+export const  displayDaysLetters = (date) => {
     let result = "";
 
     switch (date.getDay()-1) {
@@ -30,7 +30,7 @@ export const  afficherJourEnLettre = (date) => {
       return result;
 }
 
-export const afficherMoisEnLettre = (date) => {
+export const displayMonthLetters = (date) => {
     let result = "";
 
     switch (date.getDate()) {

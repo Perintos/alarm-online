@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 
-const Clock = (props) => {
+const Clock = ({date}) => {
     return(
         <div class="horloge">
-            {props.date.toLocaleTimeString()}
+            {date.toLocaleTimeString()}
         </div>
     )
 }

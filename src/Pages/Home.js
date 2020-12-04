@@ -17,17 +17,17 @@ const Home = () => {
     const [date, setDate] = useState(new Date());
     const [url, setUrl] = useState(null);
     const [isRunning, setIsRunning] = useState(null);
-    const [heure, setHeure] = useState(0);
+    const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [play, setPlay] = useState(0);
-    const [TimesUp, setTimesUp] = useState(false);
+    const [timesUp, setTimesUp] = useState(false);
  
     useEffect(() => {
         const interval = setInterval(() => {
             setDate(new Date());
         }, 1000);
 
-        if(isRunning && heure == date.getHours() && minute == date.getMinutes()){
+        if(isRunning && hour == date.getHours() && minute == date.getMinutes()){
             setPlay(1);
             setTimesUp(true)
         }
@@ -55,14 +55,14 @@ const Home = () => {
     return(
         <div>
             <Grid container direction="column" justify="center" alignItems="center" >
-                <h1 class="titre">Réveil en ligne</h1>
-                <Clock date={date} />
-                <DateToday date={date}/>
-                <SelectHour setHeure={setHeure} setMinute={setMinute}/>
-                <UrlVideo onUrlChange={onUrlChange}/>
-                <DisplayVideo play={play} url={url} />
-                {isRunning ? <Timer heure={heure} minute={minute}/> : null}
-                <Controller isRunning={isRunning} onClick={fnStartAlamr} />
+                <Grid item xs={12}><h1 class="titre">Réveil en ligne</h1></Grid>
+                <Grid item xs={12}><Clock date={date} /></Grid>
+                <Grid item xs={12}><DateToday date={date}/></Grid>
+                <Grid item xs={12}><SelectHour setHour={setHour} setMinute={setMinute}/></Grid>
+                <Grid item xs={12}><UrlVideo onUrlChange={onUrlChange}/></Grid>
+                <Grid item xs={12}><DisplayVideo play={play} url={url} /></Grid>
+                <Grid item xs={12}>{isRunning ? <Timer timesUp={timesUp} hour={hour} minute={minute}/> : null}</Grid>
+                <Grid item xs={12}><Controller isRunning={isRunning} onClick={fnStartAlamr} /></Grid>
             </Grid>
         </div>
     )

@@ -1,19 +1,17 @@
 import React from 'react';
 import Select from "@material-ui/core/Select";
-
 import {createArrayUnsignedInt} from "../Utils/Utils"
-import { withTheme } from '@material-ui/core';
 
-const SelectHour = (props) => {
+const SelectHour = ({setHour,setMinute}) => {
 
-    const handleChangeHeure = (event) => {
-        console.log("handleChangeHeure : " + event.target.value);
-        props.setHeure(event.target.value);
+    const handleChangeHours = (event) => {
+        console.log("handleChangeHours : " + event.target.value);
+        setHour(event.target.value);
     }
     
-    const handleChangeMinute = (event) => {
-        console.log("handleChangeMinute : " + event.target.value);
-        props.setMinute(event.target.value);
+    const hanfleChangeMinute = (event) => {
+        console.log("hanfleChangeMinute : " + event.target.value);
+        setMinute(event.target.value);
     }
 
     const hours = createArrayUnsignedInt(24);
@@ -33,7 +31,7 @@ const SelectHour = (props) => {
             <div>
                 <Select  
                     native
-                    onChange={handleChangeHeure}
+                    onChange={handleChangeHours}
                     inputProps={{
                         name: "heure",
                         id: "heure-native-simple"
@@ -44,7 +42,7 @@ const SelectHour = (props) => {
                 <span> : </span>
                 <Select
                     native
-                    onChange={handleChangeMinute}
+                    onChange={hanfleChangeMinute}
                     inputProps={{
                         name: "minute",
                         id: "minute-native-simple"

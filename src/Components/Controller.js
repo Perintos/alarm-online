@@ -2,12 +2,12 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 
 
-const Controller = (props) => {
+const Controller = ({onClick, isRunning }) => {
 
     return(
         <div class="margin-x-small">            
-            <Button type="submit" onClick={props.onClick} variant="contained" color={props.isRunning ? "secondary" : "primary"}>
-                {props.isRunning ? "Désactiver l'alarme" : "Régler l'alarme"}
+            <Button type="submit" onClick={onClick} variant="contained" color={isRunning ? "secondary" : "primary"}>
+                {isRunning ? "Désactiver l'alarme" : "Régler l'alarme"}
             </Button>
         </div>
     )

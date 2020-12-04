@@ -1,11 +1,11 @@
 import React from 'react';
-import {afficherJourEnLettre, afficherMoisEnLettre} from "../Utils/Date"
+import {displayDaysLetters, displayMonthLetters} from "../Utils/Date"
 
 
-const DateToday = (props) => {
+const DateToday = ({date}) => {
     return(
         <div class="date">
-            {afficherJourEnLettre(props.date)} {props.date.getDate()} {afficherMoisEnLettre(props.date)} {props.date.getFullYear()}
+            {displayDaysLetters(date)} {date.getDate()} {displayMonthLetters(date)} {date.getFullYear()}
         </div>
     )
 }

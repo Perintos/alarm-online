@@ -1,13 +1,13 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 
-const DisplayVideo = (props) => {
+const DisplayVideo = ({play,url}) => {
     const opts = {
         height: '390',
         width: '640',
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
-          autoplay: props.play,
+          autoplay: play,
         },
     };
 
@@ -16,7 +16,7 @@ const DisplayVideo = (props) => {
         <div class="margin-x-small">  
             <YouTube
                 id="video-youtube" 
-                videoId={props.url}
+                videoId={url}
                 opts={opts} 
                 />
         </div>
