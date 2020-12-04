@@ -4,9 +4,7 @@ import Select from "@material-ui/core/Select";
 import {createArrayUnsignedInt} from "../Utils/Utils"
 import { withTheme } from '@material-ui/core';
 
-const SelectHeure = (props) => {
-
- 
+const SelectHour = (props) => {
 
     const handleChangeHeure = (event) => {
         console.log("handleChangeHeure : " + event.target.value);
@@ -59,4 +57,4 @@ const SelectHeure = (props) => {
     )
 }
 
-export default(SelectHeure);
+export default(SelectHour);

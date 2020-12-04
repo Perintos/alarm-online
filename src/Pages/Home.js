@@ -3,11 +3,11 @@ import React, {useState, useEffect} from 'react';
 import Grid from '@material-ui/core/Grid';
 
 import Clock from '../Components/Clock'
-import SelectHeure from '../Components/SelectHeure'
+import SelectHour from '../Components/SelectHour'
 import DateToday from '../Components/DateToday'
 import UrlVideo from '../Components/UrlVideo';
 import DisplayVideo from '../Components/DisplayVideo';
-import Controleur from '../Components/Controleur';
+import Controller from '../Components/Controller';
 import Timer from '../Components/Timer';
 
 
@@ -58,11 +58,11 @@ const Home = () => {
                 <h1 class="titre">Réveil en ligne</h1>
                 <Clock date={date} />
                 <DateToday date={date}/>
-                <SelectHeure setHeure={setHeure} setMinute={setMinute}/>
-                <UrlVideo onUrlChange={onUrlChange}/>
+                <SelectHour setHeure={setHeure} setMinute={setMinute}/>
+                <UrlVideo handleChange={handleChange}/>
                 <DisplayVideo play={play} url={url} />
-                {isRunning ? <Timer timesUp={TimesUp} heure={heure} minute={minute}/> : null}
-                <Controleur isRunning={isRunning} onClick={fnStartAlamr} />
+                {isRunning ? <Timer heure={heure} minute={minute}/> : null}
+                <Controller isRunning={isRunning} onClick={fnStartAlamr} />
             </Grid>
         </div>
     )

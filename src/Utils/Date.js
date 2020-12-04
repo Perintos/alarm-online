@@ -1,4 +1,4 @@
-export function afficherJourEnLettre(date) {
+export const  afficherJourEnLettre = (date) => {
     let result = "";
 
     switch (date.getDay()-1) {
@@ -30,7 +30,7 @@ export function afficherJourEnLettre(date) {
       return result;
 }
 
-export function afficherMoisEnLettre(date) {
+export const afficherMoisEnLettre = (date) => {
     let result = "";
 
     switch (date.getDate()) {
@@ -75,4 +75,35 @@ export function afficherMoisEnLettre(date) {
       }
 
       return result;
+}
+
+export const calculateTimeRemaining = (heure, minutes) => {
+    const date = new Date();
+    const dateArrivee = new Date();
+
+    dateArrivee.setHours(heure,minutes, 0);
+
+    
+    let time = date.getHours()*3600 + date.getMinutes()*60 + date.getSeconds();
+    let timeArrive = dateArrivee.getHours()*3600 + dateArrivee.getMinutes()*60 + dateArrivee.getSeconds();
+    let timeRestant = 0 ;
+
+    if(time<timeArrive)
+        timeRestant = timeArrive - time;
+    else if(time>timeArrive)
+        timeRestant = 86400 - time + timeArrive;
+    else{ }
+
+    const heuresRestantes = Math.trunc(timeRestant/3600);
+    const minutesRestantes = Math.trunc((timeRestant - heuresRestantes * 3600)/60);
+    const secondesRestantes = (timeRestant - heuresRestantes * 3600 - minutesRestantes * 60);
+
+
+    console.log(heure);
+    console.log(minutes);
+    console.log("calculerTempsRestant : " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " -> " +
+        dateArrivee.getHours() + ":" + dateArrivee.getMinutes() + ":" + dateArrivee.getSeconds() + " => " +
+         + heuresRestantes + ":" + minutesRestantes + ":" + secondesRestantes); 
+
+    return (heuresRestantes + ":" + minutesRestantes + ":" + secondesRestantes);
 }
