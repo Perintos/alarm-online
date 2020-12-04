@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from "@material-ui/core/Select";
 import {createArrayUnsignedInt} from "../Utils/Utils"
+import Grid from '@material-ui/core/Grid';
+
 
 const SelectHour = ({setHour,setMinute}) => {
 
@@ -24,33 +26,31 @@ const SelectHour = ({setHour,setMinute}) => {
     );
 
     return(
-        <div class="margin-x-small">
-            <div>
-                <p>Heure de l'alarme?</p>
-            </div>
-            <div>
-                <Select  
-                    native
-                    onChange={handleChangeHours}
-                    inputProps={{
-                        name: "heure",
-                        id: "heure-native-simple"
-                    }}
-                >
-                    {listOptionsHour}
-                </Select>
-                <span> : </span>
-                <Select
-                    native
-                    onChange={hanfleChangeMinute}
-                    inputProps={{
-                        name: "minute",
-                        id: "minute-native-simple"
-                    }}
-                >
-                    {listOptionsMinutes}
-                </Select>
-            </div>
+        <div>
+            <Grid container direction="column" justify="center" alignItems="center" >
+                <Grid item xs={12}><p>Heure de l'alarme?</p></Grid>
+                <Grid item xs={12}> 
+                    <Select  
+                        native
+                        onChange={handleChangeHours}
+                        inputProps={{
+                            name: "heure",
+                            id: "heure-native-simple"
+                        }}>
+                        {listOptionsHour}
+                    </Select>
+                    <span> : </span>
+                    <Select
+                        native
+                        onChange={hanfleChangeMinute}
+                        inputProps={{
+                            name: "minute",
+                            id: "minute-native-simple"
+                        }}>
+                        {listOptionsMinutes}
+                    </Select>
+                </Grid>
+            </Grid>
         </div>
     )
 }
