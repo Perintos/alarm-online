@@ -28,25 +28,13 @@ const SelectHour = ({setHour,setMinute}) => {
             <Grid container direction="column" justify="center" alignItems="center" >
                 <Grid item xs={12}><p>Heure de l'alarme?</p></Grid>
                 <Grid item xs={12}> 
-                    <Select  
-                        native
-                        onChange={handleChangeHours}
-                        inputProps={{
-                            name: "heure",
-                            id: "heure-native-simple"
-                        }}>
+                    <select class="white" onChange={handleChangeHours}>
                         {listOptionsHour}
-                    </Select>
+                    </select>
                     <span> : </span>
-                    <Select
-                        native
-                        onChange={handleChangeMinute}
-                        inputProps={{
-                            name: "minute",
-                            id: "minute-native-simple"
-                        }}>
+                    <select class="white" onChange={handleChangeMinute}>
                         {listOptionsMinutes}
-                    </Select>
+                    </select>
                 </Grid>
             </Grid>
         </div>

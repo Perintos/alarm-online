@@ -33,7 +33,7 @@ export const  displayDaysLetters = (date) => {
 export const displayMonthLetters = (date) => {
     let result = "";
 
-    switch (date.getDate()) {
+    switch (date.getMonth()) {
         case 0:
             result = "Janvier";
           break;
