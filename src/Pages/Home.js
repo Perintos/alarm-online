@@ -27,7 +27,7 @@ const Home = () => {
             setDate(new Date());
         }, 1000);
 
-        if(isRunning && hour == date.getHours() && minute == date.getMinutes()){
+        if(isRunning && hour === date.getHours() && minute === date.getMinutes()){
             setPlay(1);
             setTimesUp(true)
         }
@@ -35,7 +35,7 @@ const Home = () => {
         console.log("play = " + play);
 
         return () => clearInterval(interval);
-    }, [date]);
+    }, [date,isRunning,minute,hour,play]);
 
     const onUrlChange = (event) => {
         setUrl(event.target.value);

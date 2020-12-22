@@ -55,19 +55,19 @@ export const displayMonthLetters = (date) => {
         case 6:
             result = "Juillet";
             break;
-        case 6:
+        case 7:
             result = "Aout";
             break;
-        case 6:
+        case 8:
             result = "Septembre";
             break;
-        case 6:
+        case 9:
             result = "Octobre";
             break;
-        case 6:
+        case 10:
             result = "Novembre";
             break;
-        case 6:
+        case 11:
             result = "Décembre";
             break;                                                                                 
         default:

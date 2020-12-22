@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
+import React from 'react';
 
 const UrlVideo = ({onUrlChange}) => {
 
