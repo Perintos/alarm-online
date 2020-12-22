@@ -10,7 +10,7 @@ import DisplayVideo from '../Components/DisplayVideo';
 import Controller from '../Components/Controller';
 import Timer from '../Components/Timer';
 
-
+import {findVideoCode} from '../Utils/Utils'
 
 const Home = () => {
 
@@ -38,7 +38,11 @@ const Home = () => {
     }, [date,isRunning,minute,hour,play]);
 
     const onUrlChange = (event) => {
-        setUrl(event.target.value);
+        if(findVideoCode(event.target.value) != null)
+            setUrl(findVideoCode(event.target.value))
+        else{
+            console.error("error")
+        }
     }
 
     const fnStartAlamr =  () => {
