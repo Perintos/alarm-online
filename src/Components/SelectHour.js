@@ -7,12 +7,10 @@ import Grid from '@material-ui/core/Grid';
 const SelectHour = ({setHour,setMinute}) => {
 
     const handleChangeHours = (event) => {
-        console.log("handleChangeHours : " + event.target.value);
         setHour(event.target.value);
     }
     
-    const hanfleChangeMinute = (event) => {
-        console.log("hanfleChangeMinute : " + event.target.value);
+    const handleChangeMinute = (event) => {
         setMinute(event.target.value);
     }
 
@@ -42,7 +40,7 @@ const SelectHour = ({setHour,setMinute}) => {
                     <span> : </span>
                     <Select
                         native
-                        onChange={hanfleChangeMinute}
+                        onChange={handleChangeMinute}
                         inputProps={{
                             name: "minute",
                             id: "minute-native-simple"
