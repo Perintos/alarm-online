@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  alarm-online:
+    image: image-alarm-online
+    container_name: container-alarm-online
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+   

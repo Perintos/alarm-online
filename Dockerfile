@@ -1,24 +1,13 @@
-# pull official base image
-FROM node:13.12.0-alpine
+FROM node:13.12.0-alpine as react-build
 
-# set working directory
-WORKDIR /app/alarm-online
+WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+COPY . /app
 
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+EXPOSE 3000
 
-# Exposer PORT 3000 sur notre machine virtuelle afin que nous puissions exécuter notre serveur
-EXPOSE 3000 
-
-# add app
-COPY . ./
-
-# start app
-CMD ["npm", "start"]
+RUN npm install 
+# RUN npm run-script build
+RUN npm run build
+RUN npm run start
 
