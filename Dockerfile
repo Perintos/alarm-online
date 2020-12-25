@@ -9,5 +9,6 @@ EXPOSE 3000
 RUN npm install 
 # RUN npm run-script build
 RUN npm run build
-RUN npm run start
+
+CMD ["npm", "start"]
 
