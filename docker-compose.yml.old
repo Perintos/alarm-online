@@ -4,3 +4,9 @@ services:
     image: image-alarm-online
     container_name: container-alarm-online
     build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+   
