@@ -1,4 +1,4 @@
-FROM node:13.12.0-alpine as react-build
+FROM node:13.12.0-alpine as build 
 
 WORKDIR /app
 
