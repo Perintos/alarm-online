@@ -8,8 +8,6 @@ RUN npm install --silent
 
 RUN npm run build
 
-CMD ["npm", "start"]
-
 FROM nginx:1.16.0-alpine
 COPY --from=build /app/build /
 RUN rm /etc/nginx/nginx.conf /
