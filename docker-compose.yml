@@ -4,3 +4,5 @@ services:
     image: image-alarm-online
     container_name: container-alarm-online
     build: .
+    ports:
+      - "80:80"
