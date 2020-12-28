@@ -25,7 +25,7 @@ const SelectHour = ({setHour,setMinute}) => {
     return(
         <div>
             <Grid container direction="column" justify="center" alignItems="center" >
-                <Grid item xs={12}><p>Heure de l'alarme?</p></Grid>
+                <Grid item xs={12}><p>Heure de l'alarme ?</p></Grid>
                 <Grid item xs={12}> 
                     <select class="white" onChange={handleChangeHours}>
                         {listOptionsHour}
