@@ -1,18 +1,7 @@
 server {
 
   listen 80;
-  serveur_name www.alarm-online.com
-  return 301 https://$serveur_name$request_uri;
-
-}  
-
-server{
-  listen 443 ssl;
-  server_name www.alarm-online.com;
-
-  ssl_certificate /etc/nginx/ssl/certificat_ssl.crt;
-  ssl_certificate /etc/nginx/ssl/key_ssl.key;
-
+  
   location / {
     root   /usr/share/nginx/html;
     index  index.html index.htm;
