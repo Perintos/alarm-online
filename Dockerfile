@@ -14,7 +14,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 
 COPY nginx/nginx.conf /etc/nginx/conf.d
 COPY nginx/certificat_ssl.crt /etc/nginx/ssl
-COPY nginx/key_ssl.key /etc/nginx/ssl/
+COPY nginx/key_ssl.key /etc/nginx/ssl
 
 
 CMD [ "nginx","-g","daemon off;"]
