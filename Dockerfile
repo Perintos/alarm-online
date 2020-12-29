@@ -13,8 +13,14 @@ COPY --from=build /app/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 
 COPY nginx/nginx.conf /etc/nginx/conf.d
+
+RUN mkdir /etc/nginx/ssl
+RUN chmod 700 /etc/nginx/ssl
+
 COPY nginx/certificat_ssl.crt /etc/nginx/ssl
 COPY nginx/key_ssl.key /etc/nginx/ssl
+
+RUN chmod 700 /etc/nginx/ssl
 
 
 CMD [ "nginx","-g","daemon off;"]
