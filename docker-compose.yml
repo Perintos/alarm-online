@@ -4,6 +4,17 @@ services:
     image: image-alarm-online
     container_name: container-alarm-online
     build: .
-    ports:
-      - "80:80"
-      - "443:433"
+    expose:
+      - "80"
+    networks:
+      - traefik
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.backend=alarm-online-backend"
+      - "traefik.frontend.rule=Host:tchateau.localhost"
+      - "traefik.port=80"
+
+networks:
+  traefik:
+    external:
+      name: traefik_webgateway
