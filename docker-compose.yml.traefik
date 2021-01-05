@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  alarm-online:
+    image: image-alarm-online
+    container_name: container-alarm-online
+    build: .
+    expose:
+      - "80"
+    networks:
+      - traefik
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.backend=alarm-online-backend"
+      - "traefik.frontend.rule=Host:51.75.127.63"
+      - "traefik.port=80"
+
+networks:
+  traefik:
+    external:
+      name: traefik_webgateway
