@@ -6,15 +6,9 @@ services:
     build: .
     expose:
       - "80"
-    networks:
-      - traefik
     labels:
-      - "traefik.docker.network=traefik"
-      - "traefik.backend=alarm-online-backend"
-      - "traefik.frontend.rule=Host:51.75.127.63"
-      - "traefik.port=80"
-
-networks:
-  traefik:
-    external:
-      name: traefik_webgateway
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`thomas-chateau.net`) && (PathPrefix(`/alarm-online`)"
+      - "traefik.http.routers.catapp.entrypoints=web"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
