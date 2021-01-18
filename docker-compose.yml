@@ -4,6 +4,11 @@ services:
     image: image-alarm-online
     container_name: container-alarm-online
     build: .
-    ports:
-      - "80:80"
-      - "443:433"
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`thomas-chateau.net`) && (PathPrefix(`/alarm-online`)"
+      - "traefik.http.routers.catapp.entrypoints=web"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
