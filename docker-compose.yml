@@ -4,6 +4,11 @@ services:
     image: image-alarm-online
     container_name: container-alarm-online
     build: .
-    ports:
-      - "80:80"
-      - "443:433"
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alarm-online.rule=Host(`51.75.127.63`)"
+      - "traefik.http.routers.alarm-online.entrypoints=web"
+      - "traefik.http.routers.alarm-online.service=alarm-online"
+      - "traefik.http.services.alarm-online.loadbalancer.server.port=4999"
