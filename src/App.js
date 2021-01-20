@@ -9,6 +9,7 @@ function App() {
     <div>
       <Router>
         <Route path="/" exact component={Home}/>
+        <Route path="/alarm-online" exact component={Home}/>
       </Router>
     </div>
   );
