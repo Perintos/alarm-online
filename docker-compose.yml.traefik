@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  alarm-online:
+    image: image-alarm-online
+    container_name: container-alarm-online
+    build: .
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alarm-online.rule=Host(`thomas-chateau.net`) && PathPrefix(`/alarm-online`)"
+      - "traefik.http.routers.alarm-online.entrypoints=web"
+      - "traefik.http.routers.alarm-online.service=alarm-online"
+      - "traefik.http.services.alarm-online.loadbalancer.server.port=5000"
