@@ -7,8 +7,9 @@ import Home from './Pages/Home'
 function App() {
   return (
     <div>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Route path="/" exact component={Home}/>
+        <Route path="/alarm-online" exact component={Home}/>
       </Router>
     </div>
   );
