@@ -7,8 +7,7 @@ import Home from './Pages/Home'
 function App() {
   return (
     <div>
-      <div className="process">process.env.PUBLIC_URL = {process.env.PUBLIC_URL}</div>
-      <Router> 
+       <Router> 
         <Route path="/" exact component={Home}/>
       </Router>
     </div>
