@@ -53,7 +53,7 @@ const Home = () => {
         else
             setIsRunning(true)
         
-        console.err("process.env.PUBLIC_UR" + process.env.PUBLIC_UR)
+        console.err("process.env.PUBLIC_UR" + process.env.PUBLIC_URL)
     }
 
     return(
