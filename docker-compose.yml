@@ -8,8 +8,8 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.alarm-online2.entrypoints=web"
-      - "traefik.http.routers.alarm-online2.rule=Host(`thomas-chateau.net`)"
+      - "traefik.http.routers.alarm-online.entrypoints=web"
+      - "traefik.http.routers.alarm-online.rule=Host(`thomas-chateau.net`)"
       - "traefik.docker.network=traefik"
     networks:
       - traefik
