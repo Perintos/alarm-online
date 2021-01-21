@@ -39,3 +39,9 @@ input {
 .white{
     background-color: white;
 }
+
+.process{
+    color: black;
+    font-size: 60px;
+    background-color: chartreuse;
+}
