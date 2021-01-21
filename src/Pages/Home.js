@@ -44,6 +44,20 @@ const Home = () => {
     }
 
     const fnStartAlamr =  () => {
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
+
         if(isRunning)
         {
             setIsRunning(false);
@@ -53,7 +67,7 @@ const Home = () => {
         else
             setIsRunning(true)
         
-        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL)
+        console.error("process.env.PUBLIC_UR = " + process.env.PUBLIC_URL==="")
     }
 
     return(
