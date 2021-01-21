@@ -9,7 +9,7 @@ function App() {
     <div>
       <div className="process">process.env.PUBLIC_URL = {process.env.PUBLIC_URL}</div>
       {/* <Router basename={process.env.PUBLIC_URL}> */}
-      <Router basename="http:thomas-chateau.net/alarm-online/">
+      <Router basename="/alarm-online">
         <Route path="/" exact component={Home}/>
       </Router>
     </div>
