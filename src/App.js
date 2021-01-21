@@ -7,9 +7,11 @@ import Home from './Pages/Home'
 function App() {
   return (
     <div>
-       <Router basename="/alarm-online"> 
+       {/* <Router basename="/alarm-online"> 
         <Route path="/" exact component={Home}/>
-      </Router>
+      </Router> */}
+
+      <Home/>
     </div>
   );
 }
