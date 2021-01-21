@@ -8,8 +8,7 @@ function App() {
   return (
     <div>
       <div className="process">process.env.PUBLIC_URL = {process.env.PUBLIC_URL}</div>
-      {/* <Router basename={process.env.PUBLIC_URL}> */}
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}> 
         <Route path="/" exact component={Home}/>
       </Router>
     </div>

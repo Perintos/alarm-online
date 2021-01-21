@@ -1,13 +1,15 @@
 version: '3.7'
 services:
-  alarm-online2:
-    image: image-alarm-online2
-    container_name: container-alarm-online2
+  alarm-online:
+    image: image-alarm-online
+    container_name: container-alarm-online
     build: .
+    expose:
+      - "80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.alarm-online2.entrypoints=web"
-      - "traefik.http.routers.alarm-online2.rule=Host(`thomas-chateau.net`) && PathPrefix(`/alarm-online`)"
+      - "traefik.http.routers.alarm-online2.rule=Host(`thomas-chateau.net`)"
       - "traefik.docker.network=traefik"
     networks:
       - traefik
