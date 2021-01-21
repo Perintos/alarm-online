@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   alarm-online2:
-    image: image-alarm-online
+    image: image-alarm-online2
     container_name: container-alarm-online2
     build: .
     expose:
